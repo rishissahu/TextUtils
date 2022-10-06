@@ -4,7 +4,7 @@ import React, {useState} from "react";
 
 
 
-export default function TextForm() {
+export default function TextForm(props) {
     const [text, setText] = useState('')
 
     const handleOnChange =(event)=>{
@@ -25,9 +25,9 @@ export default function TextForm() {
     return (
         <>
         <div className="mb-3">
-        <h1 className="mt-3 mb-5">Enter the text below</h1>
+        <h1 className="mt-3 mb-2">Enter the text below</h1>
 
-        <textarea className="form-control" id="exampleFormControlTextarea1" rows="10" value={text} onChange={handleOnChange}></textarea>
+        <textarea className="form-control"  id="textArea1" rows="10" value={text} style={{backgroundColor:props.mode==="light" ? "white": "#100929"}}  onChange={handleOnChange}></textarea>
         <button className="btn btn-primary mt-3" type="submit" onClick={handleOnClick}>Convert to Uppercase</button>
         <button className="btn btn-danger mt-3 mx-3 " type="submit" onClick={handleOnClick2}>Convert to Lowercase</button>
     </div>
